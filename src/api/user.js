@@ -1,8 +1,11 @@
 import request from '@/utils/request'
 
+//常量
+const api_name = '/user/'
+
 export function login(data) {
   return request({
-    url: '/vue-admin-template/user/login',
+    url: '/system/index/login',
     method: 'post',
     data
   })
@@ -10,7 +13,7 @@ export function login(data) {
 
 export function getInfo(token) {
   return request({
-    url: '/vue-admin-template/user/info',
+    url: '/system/index/info',
     method: 'get',
     params: { token }
   })
@@ -18,7 +21,11 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/vue-admin-template/user/logout',
+    url: '/system/index/logout',
     method: 'post'
   })
+}
+
+export default {
+  
 }

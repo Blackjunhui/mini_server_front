@@ -10,6 +10,9 @@ const service = axios.create({
   timeout: 5000 // request timeout
 })
 
+//设置axios默认json
+axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
+
 // request interceptor
 service.interceptors.request.use(
   config => {
@@ -19,7 +22,7 @@ service.interceptors.request.use(
       // let each request carry token
       // ['X-Token'] is a custom headers key
       // please modify it according to the actual situation
-      config.headers['X-Token'] = getToken()
+      config.headers['token'] = getToken()
     }
     return config
   },
